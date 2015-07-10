@@ -2,28 +2,57 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @all_gardens = Garden.all.map { |garden| [garden.name, garden.id] }
   end
 
   def create
     user = User.new(user_params)
     if user.save
-      session[:user_id] = user.id
-      redirect_to root_path, notice: "Account Created"
+      UserMailer.confirm_email(user).deliver_now
+      redirect_to root_path, notice: "Please confirm your email address to continue."
     else
-      render :back, alert: "An Error Occured. Please Try Again."
+      render :new, alert: "An Error Occured. Please Try Again."
     end
   end
 
   def destroy
+    if user_is_admin?
+      user = User.find(params[:user_id])
+      user.destroy
+      redirect_to "users/index", notice: "User deleted successfully."
+    else
+      access_denied("You are not an admin.")
+    end
   end
 
   def index
+    if user_is_admin?
+      @all_users = @current_user.garden.users
+    else
+      access_denied("You are not an admin.")
+    end
   end
 
   def update
+    if user_is_admin? || current_user.id == params[:user_id]
+      user = User.find(params[:user_id])
+      user.update(user_params)
+    else
+      access_denied("You cannot edit other users' information unless you are an admin.")
+    end
   end
 
   def show
+  end
+
+  def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    if user
+      user.email_activate
+      redirect_to login_path, notice: "Your email has been confirmed. Please log in to continue."
+    else
+      access_denied("User not found.")
+    end
   end
 
   private

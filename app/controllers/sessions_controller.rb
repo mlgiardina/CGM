@@ -6,7 +6,15 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
 
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+      if user.email_confirmed
+        if params[:remember_me]
+          cookies.permanent[:auth_token] = user.auth_token
+        else
+          cookies[:auth_token] = user.auth_token
+        end
+      else
+        access_denied("Unconfirmed Email Address")
+      end
       redirect_to root_url, notice: "Successfully logged in!"
     else
       render :back, alert: "Email or Password did not match"
@@ -14,7 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    cookies.delete(:auth_token)
     redirect_to root_url, notice: "Successfully logged out. Goodbye!"
   end
 

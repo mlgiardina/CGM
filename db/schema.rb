@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710182332) do
+ActiveRecord::Schema.define(version: 20150710200102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,15 @@ ActiveRecord::Schema.define(version: 20150710182332) do
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "admin",           default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false
     t.string   "password_digest"
+    t.boolean  "email_confirmed",        default: false
+    t.string   "confirm_token"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["garden_id"], name: "index_users_on_garden_id", using: :btree

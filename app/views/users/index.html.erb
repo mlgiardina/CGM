@@ -1,0 +1,5 @@
+<h2><%= "#{current_user.garden.name}'s Users" %> </h2>
+<% @all_users.each do |user| %>
+  <%= link_to user.full_name, user %>
+  <%= user.email %>
+<% end %>
