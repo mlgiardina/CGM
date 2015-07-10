@@ -10,25 +10,21 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'bullet', group: :development
+gem 'web-console', '~> 2.0', group: :development
+gem 'bootstrap-sass'
+gem 'react-rails'
+gem 'bcrypt'
+gem 'puma'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-
-gem 'puma'
-gem 'figaro'
-group :production do
-  gem 'rails_12factor'
-end
-
-group :development, :test do
   gem 'pry'
   gem 'faker'
 end
 
-gem 'bullet', group: :development
-gem 'bootstrap-sass'
-gem 'react-rails'
-gem 'bcrypt'
+group :production do
+  gem 'rails_12factor'
+end
