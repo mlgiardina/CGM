@@ -5,7 +5,7 @@ class PasswordResetsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     user.send_password_reset if user
-    redirect_to root_url, notie: "Email sent with password reset instructions."
+    redirect_to root_url, notice: "Email sent with instructions on how to reset your password."
   end
 
   def edit
@@ -19,8 +19,8 @@ class PasswordResetsController < ApplicationController
     elsif @user.update(user_params)
       redirect_to root_url, notice: "Password has been reset!"
     else
-      render :edit
+      render :edit, alert: "An error occurred. Please try again."
     end
   end
-  
+
 end
