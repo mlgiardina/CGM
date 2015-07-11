@@ -6,10 +6,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      UserMailer.confirm_email(user).deliver_now
-      redirect_to root_path, notice: "Please confirm your email address to continue."
+    @user = User.new(user_params)
+    if @user.save
+      UserMailer.confirm_email(@user).deliver_now
+      redirect_to login_path, notice: "Please confirm your email address to continue."
     else
       render :new, alert: "An Error Occured. Please Try Again."
     end
@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     else
       access_denied("You are not an admin.")
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    @all_gardens = Garden.all.map { |garden| [garden.name, garden.id] }
   end
 
   def update
@@ -58,7 +63,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :garden_id)
   end
 
 end

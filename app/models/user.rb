@@ -2,7 +2,15 @@ class User < ActiveRecord::Base
   has_secure_password
   belongs_to :garden
   has_many :plots
-  validates_uniqueness_of :email, case_sensitive: false
+  validates_uniqueness_of :email
+  validates :password, { :presence => true,
+                         :confirmation => true,
+                         :length => {:within => 6..40},
+                         :on => :create }
+  validates :password, { :confirmation => true,
+                         :length => {:within => 6..40},
+                         :allow_blank => true,
+                         :on => :update }
   before_create { generate_token(:auth_token) }
   before_create { generate_token(:confirm_token) }
 
