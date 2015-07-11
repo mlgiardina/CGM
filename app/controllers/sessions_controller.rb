@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       end
       redirect_to root_url, notice: "Successfully logged in!"
     else
-      render :back, alert: "Email or Password did not match"
+      redirect_to login_path, alert: "Email or Password did not match."
     end
   end
 

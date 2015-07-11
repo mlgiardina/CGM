@@ -3,7 +3,7 @@ var LoggedInNavigation = React.createClass({
     return (
       <nav>
         <Home url= '/' />
-        <MyPlots url= '/????????????' />
+
         <LogOut url= '/logout' />
       </nav>
     );
@@ -13,23 +13,35 @@ var LoggedInNavigation = React.createClass({
 var Home = React.createClass({
   render: function () {
     return (
-      <span onClick={window.location.href = this.props.url} className="btn btn-warning">Home</span>
+      <span onClick={this.clicked()} className='btn btn-default'>Home</span>
     );
+  },
+
+  clicked: function () {
+    window.location.href = this.props.url;
   }
 });
 
 var MyPlots = React.createClass({
   render: function () {
     return (
-      <span onClick={window.location.href = this.props.url} className="btn btn-primary">My Plots</span>
+      <span onClick={this.clicked()} className='btn btn-default'>My Plots</span>
     );
+  },
+
+  clicked: function () {
+    window.location.href = this.props.url;
   }
 });
 
 var LogOut = React.createClass({
   render: function () {
     return (
-      <span onClick={window.location.href = this.props.url} className="btn btn-primary">Log Out</span>
-    )
+      <span onClick={this.clicked()} className='btn btn-default'>Log Out</span>
+    );
+  },
+
+  clicked: function () {
+    window.location.href = this.props.url;
   }
 });
