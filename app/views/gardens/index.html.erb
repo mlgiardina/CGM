@@ -1,0 +1,21 @@
+<div class="garden-overview row">
+  <h2><%= @garden.name %></h2>
+    <div class="garden-container row">
+      <% @plots.each do |plot| %>
+        <div class="individual-plot">
+          <div class="plot-number">
+            <%= plot.plot_number %>
+          </div>
+          <div class="plot-owner">
+            <%= plot.user.full_name %>
+          </div>
+          <div class="plot-plant">
+            <% plot.plants.each do |plants| %>
+              <div class="plant-name">
+                <%= plant.name %>
+              </div>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
