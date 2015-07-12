@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+  get '/garden' => 'gardens#index'
+
  resources :users do
    member do
      get :confirm_email
    end
  end
- 
+
  resources :plants
  resources :gardens
  resources :plots
@@ -14,6 +16,6 @@ Rails.application.routes.draw do
  post "login" => "sessions#create", as: "create_session"
  get "logout" => "sessions#destroy", as: "logout"
 
- root "plots#index"
+ root "gardens#index"
 
 end

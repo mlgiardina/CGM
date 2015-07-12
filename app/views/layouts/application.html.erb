@@ -8,7 +8,7 @@
 <body>
   <header>
     <% if current_user %>
-      <%= react_component("LoggedInNavigation") %>
+      <%= react_component("LoggedInNavigation", user_id: current_user.id) %>
     <% else %>
       <%= react_component("LoggedOutNavigation") %>
     <% end %>

@@ -2,9 +2,9 @@ var LoggedInNavigation = React.createClass({
   render: function () {
     return (
       <nav>
-        <Home url= '/' />
-
-        <LogOut url= '/logout' />
+        <Home url='/' />
+        <MyAccount url={'/users/' + this.props.user_id} />
+        <LogOut url='/logout' />
       </nav>
     );
   }
@@ -13,7 +13,7 @@ var LoggedInNavigation = React.createClass({
 var Home = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked()} className='btn btn-default'>Home</span>
+      <span onClick={this.clicked} className='btn btn-default'>Home</span>
     );
   },
 
@@ -22,10 +22,10 @@ var Home = React.createClass({
   }
 });
 
-var MyPlots = React.createClass({
+var MyAccount = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked()} className='btn btn-default'>My Plots</span>
+      <span onClick={this.clicked} className='btn btn-default'>My Account</span>
     );
   },
 
@@ -37,7 +37,7 @@ var MyPlots = React.createClass({
 var LogOut = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked()} className='btn btn-default'>Log Out</span>
+      <span onClick={this.clicked} className='btn btn-default'>Log Out</span>
     );
   },
 
