@@ -9,12 +9,13 @@
           <div class="plot-owner">
             <%= plot.user.full_name %>
           </div>
-          <div class="plot-plant">
-            <% plot.plants.each do |plants| %>
+          <div class="plot-plants">
+            <% plot.plants.each do |plant| %>
               <div class="plant-name">
                 <%= plant.name %>
               </div>
             <% end %>
+          </div>
         </div>
       <% end %>
     </div>
