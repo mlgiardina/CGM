@@ -2,21 +2,12 @@
   <h2><%= @garden.name %></h2>
     <div class="garden-container row">
       <% @plots.each do |plot| %>
-        <div class="individual-plot">
-          <div class="plot-number">
-            <%= plot.plot_number %>
-          </div>
-          <div class="plot-owner">
-            <%= plot.user.full_name %>
-          </div>
-          <div class="plot-plants">
-            <% plot.plants.each do |plant| %>
-              <div class="plant-name">
-                <%= link_to plant.name %>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <% @plants = plot.plants %>
+        <%= react_component("Plot",
+                            plot_number: plot.plot_number,
+                            plants: @plants,
+                            owner: plot.user.full_name),
+                            image: plot.image %>
       <% end %>
     </div>
 </div>
