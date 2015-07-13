@@ -1,0 +1,7 @@
+<p>Hello <%= @user.full_name %>,</p>
+
+<p>This is a friendly reminder to give your garden some love!
+Once you've tended to the garden, don't forget to log it. Here's the URL:
+<a href= <%= url_for(controller: 'gardens', action: 'index') %>></a></p>
+
+<p>Happy Gardening!</p>

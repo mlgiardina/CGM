@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
     save!(validate: false)
   end
 
+  def reminder_email
+    UserMailer.reminder_email(self).deliver_now
+  end
+
 end

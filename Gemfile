@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 gem 'rails', '4.2.3'
 gem 'pg'
@@ -17,6 +17,7 @@ gem 'react-rails'
 gem 'bcrypt'
 gem 'puma'
 gem 'figaro'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'

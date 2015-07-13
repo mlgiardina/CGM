@@ -14,4 +14,10 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "Confirm Email"
   end
+
+  def reminder_email(user)
+    @user = user
+    mail to: user.email, subject: "Garden Reminder"
+  end
+
 end

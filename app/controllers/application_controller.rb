@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-helper_method :current_user
+  helper_method :current_user
 
   def user_is_admin?
     @user_is_admin ||= current_user ? current_user.admin : false
