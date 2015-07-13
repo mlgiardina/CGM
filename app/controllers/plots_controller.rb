@@ -58,7 +58,8 @@ class PlotsController < ApplicationController
   end
 
   def add_plant
-    @new_plant = PlotPlant.new 
+    authenticate_user!
+    @new_plant = PlotPlant.new
   end
 
   private
