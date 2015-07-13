@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def access_denied(msg)
-    redirect_to root_path, alert: "Cannot Complete Action: #{msg}."
+    redirect_to root_path, alert: "Cannot Complete Action: #{msg}"
   end
 
   def current_user

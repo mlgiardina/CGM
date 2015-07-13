@@ -11,13 +11,14 @@ var Plot = React.createClass({
     });
 
     return (
-      <div className='individual-plot' onMouseOver={this.handleHover}>
-        <p className='plot-number'>Plot {this.props.plot_number}</p>
-        <p className='plot-owner'>{this.props.owner}</p>
-        <ul className='plants'>
-          {plantList}
-        </ul>
-      </div>
+      <a href={this.props.url} onMouseOver={this.handleHover}>
+        <div className='individual-plot'>
+          <p className='plot-number'>Plot {this.props.plot_number}</p>
+          <p className='plot-owner'>{this.props.owner}</p>
+          <ul className='plants'>{plantList}</ul>
+          <img src={this.props.image} />
+        </div>
+      </a>
     );
   },
 

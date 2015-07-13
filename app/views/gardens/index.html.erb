@@ -6,8 +6,11 @@
         <%= react_component("Plot",
                             plot_number: plot.plot_number,
                             plants: @plants,
-                            owner: plot.user.full_name),
-                            image: plot.image %>
+                            owner: plot.user.full_name,
+                            image: plot.image,
+                            url: url_for(controller: 'plots',
+                                         action: 'show',
+                                         id: plot.id)) %>
       <% end %>
     </div>
 </div>
