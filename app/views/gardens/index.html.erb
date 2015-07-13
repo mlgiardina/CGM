@@ -12,7 +12,7 @@
           <div class="plot-plants">
             <% plot.plants.each do |plant| %>
               <div class="plant-name">
-                <%= plant.name %>
+                <%= link_to plant.name %>
               </div>
             <% end %>
           </div>

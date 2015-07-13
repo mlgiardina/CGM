@@ -35,16 +35,17 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @all_gardens = Garden.all.map { |garden| [garden.name, garden.id] }
-  end
-
-  def update
-    if user_is_admin? || current_user.id == params[:user_id]
-      user = User.find(params[:user_id])
-      user.update(user_params)
+    if user_is_admin? || @user.id == current_user.id
+      @all_gardens = Garden.all.map { |garden| [garden.name, garden.id] }
     else
       access_denied("You cannot edit other users' information unless you are an admin.")
     end
+  end
+
+  def update
+      @user = User.find(params[:id])
+      @user.update(user_params)
+      redirect_to @user, notice: "Account Successfully Updated."
   end
 
   def show

@@ -10,16 +10,15 @@ class PlotsController < ApplicationController
 
   def create
     plot = Plot.new(plot_params)
-      if plot.save
-        render "plots#index", notice: "Plot Successfully Created."
-      else
-        render :back, alert: "An Error Occurred. Please Try Again."
-      end
+    if plot.save
+      render "plots#index", notice: "Plot Successfully Created."
     else
+      render :back, alert: "An Error Occurred. Please Try Again."
+    end
   end
 
   def edit
-    if user_is_admin? || current_user.id == Plot.find(params[:id].user.id
+    if user_is_admin? || current_user.id == Plot.find(params[:id].user.id)
       @plot = Plot.find(params[:id])
     else
       access_denied("Only admins or owners of this plot may edit the plot.")
@@ -36,7 +35,7 @@ class PlotsController < ApplicationController
     if user_is_admin?
       @plot = Plot.find(params[:id])
       if @plot.delete
-        redirect_to "root_path", notice: "Plot Successfuly Deleted"
+        redirect_to "root_path", notice: "Plot Successfuly Deleted."
       else
         render :back, alert: "An Error Occurred. Please Try Again."
       end
@@ -55,9 +54,11 @@ class PlotsController < ApplicationController
   end
 
   def index
-    if user_is_admin?
-      @plots = current_user.garden.plots
-    end
+    @plots = current_user.plots
+  end
+
+  def add_plant
+    @new_plant = PlotPlant.new 
   end
 
   private
