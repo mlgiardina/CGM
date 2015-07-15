@@ -5,3 +5,36 @@
 .hidden {
   background-color: lightblue;
 }
+
+.garden-container {
+  width: 510px;
+  margin: 0 auto;
+
+  a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    line-height: 150px;
+    overflow: hidden;
+    background-color: #191919;
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 150px;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 1.5s ease;
+
+      &:hover {
+        top: 100px;
+      }
+    }
+
+  }
+
+
+}

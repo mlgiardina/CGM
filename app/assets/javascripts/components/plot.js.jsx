@@ -11,7 +11,7 @@ var Plot = React.createClass({
     });
 
     return (
-      <a href={this.props.url} onMouseOver={this.handleHover}>
+      <a href={this.props.url}>
         <div className='individual-plot'>
           <p className='plot-number'>Plot {this.props.plot_number}</p>
           <p className='plot-owner'>{this.props.owner}</p>
@@ -22,7 +22,4 @@ var Plot = React.createClass({
     );
   },
 
-  handleHover: function () {
-    $(this).find("img").animate({top:"-150px"}, 400);
-  }
 });
