@@ -18,6 +18,8 @@ gem 'bcrypt'
 gem 'puma'
 gem 'figaro'
 gem 'whenever', :require => false
+gem 'cloudinary'
+gem 'mandrill_dm'
 
 group :development, :test do
   gem 'byebug'

@@ -2,11 +2,7 @@ var Plot = React.createClass({
   render: function () {
     var plantList = this.props.plants.map(function(plant) {
       return (
-        <li>{plant.name}
-          <ul>
-            <li>{plant.description}</li>
-          </ul>
-        </li>
+        <li>{plant.name} | {plant.description}</li>
       );
     });
 
