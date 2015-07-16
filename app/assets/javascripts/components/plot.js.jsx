@@ -2,7 +2,7 @@ var Plot = React.createClass({
   render: function () {
     var plantList = this.props.plants.map(function(plant) {
       return (
-        <li>{plant.name} | {plant.description}</li>
+        <li>{plant.name}</li>
       );
     });
 
@@ -11,7 +11,7 @@ var Plot = React.createClass({
         <div className='individual-plot'>
           <p className='plot-number'>Plot {this.props.plot_number}</p>
           <p className='plot-owner'>{this.props.owner}</p>
-          <ul className='plants'>{plantList}</ul>
+          <p className='plants'>{plantList}</p>
           <img src={this.props.image} />
         </div>
       </a>

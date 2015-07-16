@@ -18,7 +18,7 @@ class PlotsController < ApplicationController
   end
 
   def edit
-    if user_is_admin? || current_user.id == Plot.find(params[:id].user.id)
+    if user_is_admin? || current_user.id == Plot.find(params[:id]).user.id
       @plot = Plot.find(params[:id])
     else
       access_denied("Only admins or owners of this plot may edit the plot.")
@@ -27,8 +27,15 @@ class PlotsController < ApplicationController
 
   def update
     @plot = Plot.find(params[:id])
-    @plot.update(plot_params)
-    redirect_to @plot, notice: "Plot Successfully Updated."
+    if params[:image].present?
+      image = params[:image].to_hash.values.first
+      binding.pry
+      preloaded = Cloudinary::PreloadedFile.new(image)
+      raise "Invalid upload signature" if !preloaded.valid?
+      @plot.image = "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_150,w_150/" + preloaded.identifier
+      @plot.save!
+      redirect_to root_path, notice: "Plot Successfully Updated."
+    end
   end
 
   def destroy

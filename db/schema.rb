@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713213146) do
+ActiveRecord::Schema.define(version: 20150716015621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20150713213146) do
     t.integer  "plot_number"
     t.integer  "garden_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "image"
+    t.datetime "created_at",                                                                                                         null: false
+    t.datetime "updated_at",                                                                                                         null: false
+    t.string   "image",       default: "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_150,w_150/v1437002103/sample.jpg"
   end
 
   add_index "plots", ["garden_id"], name: "index_plots_on_garden_id", using: :btree

@@ -1,1 +1,9 @@
-<%= form_for(@plot) do |f| %>
+<%= form_for(@plot) do %>
+  <%= cloudinary_js_config %>
+  <%= cl_image_upload(:image,
+                      :crop => :limit,
+                      :width => 150,
+                      :height => 150) %>
+  <%= submit_tag "Submit" %>
+<% end %>
+<div class="preview"></div>
