@@ -51,12 +51,7 @@ class PlotsController < ApplicationController
   end
 
   def show
-    if user_is_admin? || current_user.id == Plot.find(params[:id]).user.id
-      @plot = Plot.find(params[:id])
-      redirect_to @plot
-    else
-      access_denied("Only admins or owners of this plot may view this plot.")
-    end
+    @plot = Plot.find(params[:id])
   end
 
   def index

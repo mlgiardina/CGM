@@ -15,7 +15,7 @@
     text-decoration: none;
     text-align: center;
     overflow: hidden;
-    background-color: #191919;
+    background-color: #352211;
     position: relative;
     float: left;
     width: 150px;
@@ -31,8 +31,10 @@
         top: 100px;
       }
     }
-
   }
+}
 
-
+.container {
+  background-image: url(dirt.jpg);
+  background-size: cover;
 }

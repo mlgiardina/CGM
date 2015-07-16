@@ -21,14 +21,6 @@
 //= require_tree .
 
 
-  $(document).ready(function() {
-
-    $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
-      $('.preview').html(
-        $.cloudinary.image(data.result.public_id,
-          { format: data.result.format, version: data.result.version,
-            crop: 'fill', width: 150, height: 150 })
-      );
-      });
+$(document).ready(function() {
       $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
-  });
+});
