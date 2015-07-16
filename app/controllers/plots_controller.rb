@@ -29,7 +29,6 @@ class PlotsController < ApplicationController
     @plot = Plot.find(params[:id])
     if params[:image].present?
       image = params[:image].to_hash.values.first
-      binding.pry
       preloaded = Cloudinary::PreloadedFile.new(image)
       raise "Invalid upload signature" if !preloaded.valid?
       @plot.image = "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_150,w_150/" + preloaded.identifier
