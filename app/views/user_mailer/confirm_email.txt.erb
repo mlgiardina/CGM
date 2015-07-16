@@ -2,6 +2,5 @@ Hello <%= @user.full_name %>,
 This email is to confirm that you signed up for CGM.
   To confirm your registration, please follow this link: <%= url_for(controller: 'users',
                                                          action: 'confirm_email',
-                                                         host: "localhost:3000",
                                                          id: @user.confirm_token) %>
 If you did not sign up for CGM, please disregard this email.
