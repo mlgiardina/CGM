@@ -1,10 +1,16 @@
-<%= form_for(@plot) do %>
+<%= form_for(@plot) do |f| %>
   <%= cloudinary_js_config %>
-  <%= cl_image_upload(:image,
-                      :crop => :limit,
-                      :width => 150,
-                      :height => 150) %>
-  <%= submit_tag "Submit" %>
+  <p>Current Image:
+    <img src=<%=@plot.image %>>
+    <p>Upload a New Image:</p>
+    <%= cl_image_upload(:image,
+                        :crop => :fill,
+                        :width => 200,
+                        :height => 200) %>
+  </p>
+  <%= f.submit "Submit" %>
 <% end %>
-<div class="preview"></div>
-<div class="upload_section"> </div>
+
+<button data-target="plant_index" class="btn modal-trigger">Add a Plant</button>
+
+<%= react_component("PlantIndex", plants: @plants) %>

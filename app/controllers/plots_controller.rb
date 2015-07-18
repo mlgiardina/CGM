@@ -20,6 +20,7 @@ class PlotsController < ApplicationController
   def edit
     if user_is_admin? || current_user.id == Plot.find(params[:id]).user.id
       @plot = Plot.find(params[:id])
+      @plants = Plant.all
     else
       access_denied("Only admins or owners of this plot may edit the plot.")
     end

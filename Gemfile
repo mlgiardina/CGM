@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bullet', group: :development
 gem 'web-console', '~> 2.0', group: :development
-gem 'bootstrap-sass'
+gem 'materialize-sass'
 gem 'react-rails'
 gem 'bcrypt'
 gem 'puma'

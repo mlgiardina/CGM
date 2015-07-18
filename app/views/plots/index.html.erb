@@ -3,7 +3,8 @@
   <div><%= link_to "Plot Number #{plot.plot_number}", plot %>
     <p><% plot.plants.each do |plant| %>
       <%= plant.name %>
-      <li><%= plant.description %></li></p>
+      <li><%= plant.description %></li>
+    </p>
     <% end %>
   </div>
 <% end %>
