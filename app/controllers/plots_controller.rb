@@ -31,7 +31,7 @@ class PlotsController < ApplicationController
       image = params[:image].to_hash.values.first
       preloaded = Cloudinary::PreloadedFile.new(image)
       raise "Invalid upload signature" if !preloaded.valid?
-      @plot.image = "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_150,w_150/" + preloaded.identifier
+      @plot.image = "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_200,w_200/" + preloaded.identifier
       @plot.save!
       redirect_to root_path, notice: "Plot Successfully Updated."
     end
@@ -51,7 +51,11 @@ class PlotsController < ApplicationController
   end
 
   def show
-    @plot = Plot.find(params[:id])
+    if current_user.garden.id == Plot.find(params[:id]).garden.id
+      @plot = Plot.find(params[:id])
+    else
+      access_denied("You are not a member of that garden.")
+    end
   end
 
   def index

@@ -11,30 +11,31 @@
 
   a {
     margin: 0 10px;
-    font-size: 1.2rem;
+    font-size: 16px;
     text-decoration: none;
     text-align: center;
     overflow: hidden;
     background-color: #352211;
     position: relative;
     float: left;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+
 
     img {
       position: absolute;
       left: 0;
-      top: 0;
+      top: 20px;
       transition: all 1.5s ease;
 
       &:hover {
-        top: 100px;
+        top: 150px;
       }
     }
   }
 }
 
-.container {
+.garden-container {
   background-image: url(dirt.jpg);
   background-size: cover;
 }

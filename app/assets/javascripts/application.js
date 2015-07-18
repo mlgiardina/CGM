@@ -23,4 +23,13 @@
 
 $(document).ready(function() {
       $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
+      var inviteSearchFilter = function () {
+          $("#search").on("keyup paste change", function(){
+              var re = new RegExp(this.value, "i");
+              $("#invitees tr").each(function(index){
+                  var invitee_name = $("#invitee_name", this).html();
+                  this.hidden = !re.test(invitee_name);
+              });
+          });
+      };
 });

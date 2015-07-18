@@ -1,5 +1,5 @@
 <div class="garden-overview row">
-  <h2><%= @garden.name %></h2>
+  <h2><%= @garden.name.titleize %></h2>
     <div class="garden-container row">
       <% @plots.each do |plot| %>
         <% @plants = plot.plants %>

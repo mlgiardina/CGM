@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150716015621) do
     t.integer  "user_id"
     t.datetime "created_at",                                                                                                         null: false
     t.datetime "updated_at",                                                                                                         null: false
-    t.string   "image",       default: "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_150,w_150/v1437002103/sample.jpg"
+    t.string   "image",       default: "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_200,w_200/v1437002103/sample.jpg"
   end
 
   add_index "plots", ["garden_id"], name: "index_plots_on_garden_id", using: :btree
