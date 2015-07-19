@@ -10,5 +10,14 @@ class PlotPlantsController < ApplicationController
     end
   end
 
+  def destroy
+    @plot_plant = PlotPlant.find(params[:id])
+    if @plot_plant.delete
+      redirect_to :back, notice: "Plant removed from this plot."
+    else
+      redirect_to :back, alert: "An error occurred. Please try again."
+    end
+  end
+
 
 end

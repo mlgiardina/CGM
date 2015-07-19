@@ -9,7 +9,7 @@
   margin: 0 auto;
 
   a {
-    margin: 0 10px;
+    margin: 10px;
     font-size: 16px;
     text-decoration: none;
     text-align: center;
@@ -19,17 +19,17 @@
     float: left;
     width: 200px;
     height: 200px;
-
+    &:hover {
+      img {
+      top: 150px;
+      transition: all 1.5s ease;
+      }
+    }
 
     img {
       position: absolute;
       left: 0;
       top: 20px;
-      transition: all 1.5s ease;
-
-      &:hover {
-        top: 150px;
-      }
     }
   }
 }

@@ -34,7 +34,7 @@ class PlotsController < ApplicationController
       raise "Invalid upload signature" if !preloaded.valid?
       @plot.image = "http://res.cloudinary.com/dnnsd9n2k/image/upload/c_fill,h_200,w_200/" + preloaded.identifier
       @plot.save!
-      redirect_to root_path, notice: "Plot Successfully Updated."
+      redirect_to "/plots/#{@plot.id}/edit", notice: "Plot Successfully Updated."
     end
   end
 
