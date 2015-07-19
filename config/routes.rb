@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/garden' => 'gardens#index'
-  get '/plots/add_plant' => 'plots#add_plant'
+  resources :plot_plants
 
   resources :users do
     member do

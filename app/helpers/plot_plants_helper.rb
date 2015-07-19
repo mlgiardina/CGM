@@ -1,0 +1,2 @@
+module PlotPlantsHelper
+end

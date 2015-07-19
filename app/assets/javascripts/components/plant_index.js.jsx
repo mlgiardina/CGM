@@ -16,7 +16,7 @@ var PlantIndex = React.createClass({
             <input type='text' id='search-bar' placeholder="Plant" onChange={this.filterList}/>
           </div>
           <h4>Plants</h4>
-          <Plants plants={this.state.filteredPlants} />
+          <Plants plants={this.state.filteredPlants} plot={this.props.plot} />
           </div>
       </div>
     );
@@ -35,6 +35,7 @@ var PlantIndex = React.createClass({
 
 var Plants = React.createClass({
   render: function () {
+    var self = this;
     return (
       <table className="table">
         <thead>
@@ -50,6 +51,7 @@ var Plants = React.createClass({
                 <tr>
                   <td>{plant.name}</td>
                   <td>{plant.description}</td>
+                  <td><AddPlant plant={plant} plot={self.props.plot}/></td>
                 </tr>
               )
             })
@@ -57,5 +59,38 @@ var Plants = React.createClass({
         </tbody>
       </table>
     )
+  },
+});
+
+var AddPlant = React.createClass({
+  getInitialState: function () {
+    return { added: false };
+  },
+
+  render: function () {
+    if (this.state.added) {
+      return (
+        <button type="button" disabled="true" onClick={this.handleClick}>Added!</button>
+      );
+    } else {
+      return (
+        <button type="button" onClick={this.handleClick}>Add Plant</button>
+      );
+    }
+  },
+
+  handleClick: function () {
+    var self = this;
+    console.log(this.props);
+    $.post("/plot_plants/",
+          {
+            plot_id: this.props.plot.id,
+            plant_id: this.props.plant.id
+          },
+          function (data, status) {
+            if (status === "success" ) {
+              self.setState({ added: true });
+            };
+          });
   }
-})
+});
