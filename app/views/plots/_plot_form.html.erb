@@ -11,16 +11,21 @@
   <%= f.submit "Update Image" %>
 <% end %>
 
-<% @plot.plants.each do |plant| %>
-<% @plot_plant_id = PlotPlant.where(plant_id: plant.id,
-                                 plot_id: @plot.id).first.id.to_s %>
-  <p><%= plant.name %></p>
-  <li><%= plant.description %></li>
-  <%= link_to "Remove This Plant",
-              "/plot_plants/" + @plot_plant_id,
-              method: :delete,
-              data: {confirm: "Are you sure you wish to remove this plant from this plot?"} %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Plant Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @plot.plants.each do |plant| %>
+    <% @plot_plant_id = PlotPlant.where(plant_id: plant.id,
+                                      plot_id: @plot.id).first.id.to_s %>
+    <%= react_component("UserPlant", plant: plant, plotPlantID: @plot_plant_id) %>
+  <% end %>
+  </tbody>
+</table>
 
 <button data-target="plant_index" class="btn modal-trigger">Add a Plant</button>
 

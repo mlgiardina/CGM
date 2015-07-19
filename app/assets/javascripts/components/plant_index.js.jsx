@@ -53,7 +53,7 @@ var Plants = React.createClass({
                   <td>{plant.description}</td>
                   <td><AddPlant plant={plant} plot={self.props.plot}/></td>
                 </tr>
-              )
+              );
             })
           }
         </tbody>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/garden' => 'gardens#index'
+  delete 'plot_plants' => 'plot_plants#destroy'
   resources :plot_plants
 
   resources :users do
