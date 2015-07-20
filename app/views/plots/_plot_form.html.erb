@@ -10,22 +10,8 @@
   </p>
   <%= f.submit "Update Image" %>
 <% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Plant Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @plot.plants.each do |plant| %>
-    <% @plot_plant_id = PlotPlant.where(plant_id: plant.id,
-                                      plot_id: @plot.id).first.id.to_s %>
-    <%= react_component("UserPlant", plant: plant, plotPlantID: @plot_plant_id) %>
-  <% end %>
-  </tbody>
-</table>
+<h4>Plants in this plot:</h4>
+<%= react_component("UserPlantList", plants: @user_plants, plotPlants: PlotPlant.where(plot_id: @plot.id)) %>
 
 <button data-target="plant_index" class="btn modal-trigger">Add a Plant</button>
 

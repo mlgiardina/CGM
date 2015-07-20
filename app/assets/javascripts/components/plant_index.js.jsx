@@ -21,7 +21,6 @@ var PlantIndex = React.createClass({
       </div>
     );
   },
-
   filterList: function (event) {
     var updatedPlantList = this.state.plants;
     updatedPlantList = updatedPlantList.filter(function(plant) {
@@ -81,7 +80,6 @@ var AddPlant = React.createClass({
 
   handleClick: function () {
     var self = this;
-    console.log(this.props);
     $.post("/plot_plants/",
           {
             plot_id: this.props.plot.id,
