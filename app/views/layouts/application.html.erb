@@ -14,24 +14,21 @@
     <% end %>
   </header>
   <% if notice %>
-    <div class="alert alert-success" role="alert">
+    <div class="notice">
       <%= notice %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
   <% end %>
   <% if alert %>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert">
       <%= alert %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
   <% end %>
   <div class="container">
     <%= yield %>
   </div>
+  <footer>
+    CGM was created by <a href="https://twitter.com/mlgiardina">@mlgiardina</a>.
+  </footer>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

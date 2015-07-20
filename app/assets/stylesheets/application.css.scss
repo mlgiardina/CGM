@@ -42,3 +42,59 @@
 .plants-in-plot {
   display: inline;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 7%;
+  background: #79B29E;
+  width: 100%;
+  text-align: center;
+  padding-top: 12px;
+  color: white;
+
+  a{
+    color: white;
+    &:hover {
+
+    }
+  }
+}
+
+nav {
+  background-color: #79B29E;
+
+  .btn {
+    background: #12715B;
+    color: white;
+
+    &:hover {
+      background: darken(#12715B, 3%);
+    }
+  }
+}
+
+.login-form {
+  border: 1px solid #013323;
+  max-width: 50%;
+  margin: 70px auto auto auto;
+  box-sizing: border-box;
+  padding: 10px;
+
+  .login-button {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #013323;
+    text-align: center;
+  }
+}
+
+.container {
+  padding-top: 20px;
+  min-height: 650px;
+}
