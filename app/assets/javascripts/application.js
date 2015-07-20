@@ -24,4 +24,5 @@
 $(document).ready(function() {
       $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('.modal-trigger').leanModal();
+      $('select').material_select();
 });
