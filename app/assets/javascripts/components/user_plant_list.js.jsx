@@ -13,26 +13,34 @@ var UserPlantList = React.createClass({
     }
     this.setState({plants: updatedPlantList})
   },
+  listenForAddedPlant: function(addedPlant) {
+    var updatedPlantList = this.state.plants;
+    updatedPlantList.push(addedPlant);
+    this.setState({plants: updatedPlantList});
+  },
   render: function () {
     var self = this;
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Plant Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-        {
-          this.props.plants.map(function(plant) {
-            return (
-              <UserPlant plotPlants={self.props.plotPlants} plant={plant} removePlant={self.listenForRemovedPlant} />
-            );
-          })
-        }
-      </tbody>
-    </table>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Plant Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          {
+            this.props.plants.map(function(plant) {
+              return (
+                <UserPlant key={plant.id} plotPlants={self.props.plotPlants} plant={plant} removePlant={self.listenForRemovedPlant} />
+              );
+            })
+          }
+          </tbody>
+        </table>
+        <PlantIndex listenForAddedPlant={this.listenForAddedPlant} allPlants={this.props.allPlants} plot={this.props.plot} />
+      </div>
     );
   }
 });

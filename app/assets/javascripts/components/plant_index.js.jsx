@@ -1,7 +1,7 @@
 var PlantIndex = React.createClass({
   getInitialState: function () {
     return {
-      plants: this.props.plants,
+      plants: this.props.allPlants,
       filteredPlants: []
     }
   },
@@ -16,7 +16,7 @@ var PlantIndex = React.createClass({
             <input type='text' id='search-bar' placeholder="Search for plants..." onChange={this.filterList}/>
           </div>
           <h4>Plants</h4>
-          <Plants plants={this.state.filteredPlants} plot={this.props.plot} />
+          <Plants plants={this.state.filteredPlants} plot={this.props.plot} listenForAddedPlant={this.props.listenForAddedPlant} />
           </div>
       </div>
     );
@@ -50,7 +50,7 @@ var Plants = React.createClass({
                 <tr>
                   <td>{plant.name}</td>
                   <td>{plant.description}</td>
-                  <td><AddPlant plant={plant} plot={self.props.plot}/></td>
+                  <td><AddPlant plant={plant} plot={self.props.plot} listenForAddedPlant={self.props.listenForAddedPlant}/></td>
                 </tr>
               );
             })
@@ -69,7 +69,7 @@ var AddPlant = React.createClass({
   render: function () {
     if (this.state.added) {
       return (
-        <button type="button" disabled="true" onClick={this.handleClick}>Added!</button>
+        <button type="button" disabled="true">Added!</button>
       );
     } else {
       return (
@@ -80,6 +80,7 @@ var AddPlant = React.createClass({
 
   handleClick: function () {
     var self = this;
+    self.props.listenForAddedPlant(this.props.plant)
     $.post("/plot_plants/",
           {
             plot_id: this.props.plot.id,

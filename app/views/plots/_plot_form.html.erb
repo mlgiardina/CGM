@@ -10,9 +10,7 @@
   </p>
   <%= f.submit "Update Image" %>
 <% end %>
-<h4>Plants in this plot:</h4>
-<%= react_component("UserPlantList", plants: @user_plants, plotPlants: PlotPlant.where(plot_id: @plot.id)) %>
-
-<button data-target="plant_index" class="btn modal-trigger">Add a Plant</button>
-
-<%= react_component("PlantIndex", plants: @plants, plot: @plot) %>
+<p><h4 class="plants-in-plot">Plants in this plot: </h4>
+  <button data-target="plant_index" class="btn modal-trigger">Add a Plant</button>
+</p>
+<%= react_component("UserPlantList", allPlants: @plants, plot: @plot, plants: @user_plants, plotPlants: PlotPlant.where(plot_id: @plot.id)) %>
