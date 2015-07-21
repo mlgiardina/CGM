@@ -14,7 +14,7 @@
     text-decoration: none;
     text-align: center;
     overflow: hidden;
-    background-color: #352211;
+    background-color: #B4B5A7;
     position: relative;
     float: left;
     width: 200px;
@@ -61,28 +61,26 @@ footer {
 }
 
 nav {
-  background-color: #79B29E;
+  background-color: #B4B5A7;
 
   .btn {
-    background: #12715B;
+    background: #18705B;
     color: white;
 
     &:hover {
-      background: darken(#12715B, 3%);
+      background: darken(#18705B, 3%);
     }
   }
 }
 
 .login-form, .signup-form {
-  border: 1px solid #013323;
+  border: 1px solid #18705B;
   max-width: 70%;
   margin: 70px auto auto auto;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 2em;
-  box-shadow: 0 0 1em #013323;
-  opacity: .8;
-  background: #013323;
+  background: #18705B;
 
   .login-button, .sign-up-button {
     width: 30%;
@@ -96,7 +94,7 @@ nav {
 
   h2 {
     font-size: 2.5rem;
-    color: #79B29E;
+    color: white;
     text-align: center;
   }
 }
