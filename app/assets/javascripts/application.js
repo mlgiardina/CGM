@@ -14,7 +14,6 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require react
-//= require turbolinks
 //= require react_ujs
 //= require components
 //= require cloudinary
