@@ -45,7 +45,7 @@
 footer {
   bottom: 0;
   height: 10%;
-  background: #79B29E;
+  background: #B4B5A7;
   width: 100%;
   text-align: center;
   padding-top: 7px;
@@ -122,4 +122,16 @@ nav {
 
 .current-plot-image {
   display: inline;
+}
+
+.logo {
+  font-size: 24px;
+  float: right;
+  padding-right: 8px;
+  color: #18705B;
+  font-weight: bold;
+
+  &:hover {
+    color: darken(#18705B, 3%);
+  }
 }

@@ -6,6 +6,7 @@ var LoggedInNavigation = React.createClass({
         <MyAccount url={'/users/' + this.props.user_id} />
         <MyPlots url='/plots' />
         <LogOut url='/logout' />
+        <a className="logo" href="/">Community Garden Manager</a>
       </nav>
     );
   }
