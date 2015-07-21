@@ -4,7 +4,7 @@
     <p> <%= f.label :first_name, "First Name" %> <%= f.text_field :first_name %> </p>
     <p> <%= f.label :last_name, "Last Name" %> <%= f.text_field :last_name %> </p>
     <p> <%= f.label :email, "Email" %> <%= f.text_field :email %> </p>
-    <p> <%= f.select :garden_id, @all_gardens %> <%= f.label :garden_id, "Garden" %>  </p>
+    <p> <%= f.label :garden_id, "Garden" %> <%= f.select :garden_id, @all_gardens %> </p>
     <p> <%= f.label :password, "Password" %> <%= f.password_field :password %> </p>
     <p> <%= f.label :password_confirmation, "Confirm Password" %> <%= f.password_field :password_confirmation %> </p>
     <button class="sign-up-button">Sign Up</button>
