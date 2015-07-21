@@ -6,7 +6,7 @@ var UserPlant = React.createClass({
       <tr>
         <td>{plant.name}</td>
         <td>{plant.description}</td>
-        <td><button onClick={this.handleClick}>Remove This Plant</button></td>
+        <td><button className="btn" onClick={this.handleClick}>Remove This Plant</button></td>
       </tr>
     );
   },

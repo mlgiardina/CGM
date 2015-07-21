@@ -1,5 +1,4 @@
 @import "materialize";
-//You need to now manually import every other scss file.
 
 .hidden {
   background-color: lightblue;
@@ -62,15 +61,7 @@ footer {
 
 nav {
   background-color: #B4B5A7;
-
-  .btn {
-    background: #18705B;
-    color: white;
-
-    &:hover {
-      background: darken(#18705B, 3%);
-    }
-  }
+  padding-left: 5px;
 }
 
 .login-form, .signup-form {
@@ -103,4 +94,32 @@ nav {
   padding-top: 20px;
   min-height: 650px;
   padding-bottom: 7%
+}
+
+.btn {
+  background: #18705B;
+  color: white;
+  &:hover {
+    background: darken(#18705B, 3%);
+  }
+}
+
+.add-plant-btn {
+  float: right;
+}
+
+.user-plant-list {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.edit-plot-image {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.current-plot-image {
+  display: inline;
 }

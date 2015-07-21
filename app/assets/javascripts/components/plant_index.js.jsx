@@ -12,10 +12,10 @@ var PlantIndex = React.createClass({
     return (
       <div id="plant_index" className="modal">
         <div className="modal-content">
+          <h4>Plants</h4>
           <div className="plant-search">
             <input type='text' id='search-bar' placeholder="Search for plants..." onChange={this.filterList}/>
           </div>
-          <h4>Plants</h4>
           <Plants plants={this.state.filteredPlants} plot={this.props.plot} listenForAddedPlant={this.props.listenForAddedPlant} />
           </div>
       </div>
@@ -69,11 +69,11 @@ var AddPlant = React.createClass({
   render: function () {
     if (this.state.added) {
       return (
-        <button type="button" disabled="true">Added!</button>
+        <button className="btn add-plant-btn" type="button" disabled="true">Added!</button>
       );
     } else {
       return (
-        <button type="button" onClick={this.handleClick}>Add Plant</button>
+        <button className="btn add-plant-btn" type="button" onClick={this.handleClick}>Add Plant</button>
       );
     }
   },
