@@ -21,9 +21,7 @@
 
 
 $(document).ready(function() {
-      $('.add-plant-btn').click(function() {
-        $('#plant_index').openModal();
-      });
+      $('.modal-trigger').leanModal();
       $('select').material_select();
       $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {

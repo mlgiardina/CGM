@@ -2,10 +2,10 @@ var LoggedOutNavigation = React.createClass({
   render: function () {
     return (
       <nav>
+        <a className="logo" href="/">Community Garden Manager</a>
         <Home url='/'/>
         <SignUp url='/users/new'/>
         <LogIn url='/login'/>
-        <a className="logo" href="/">Community Garden Manager</a>
       </nav>
     );
   }
