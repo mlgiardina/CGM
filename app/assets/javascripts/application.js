@@ -21,6 +21,7 @@
 
 
 $(document).ready(function() {
+      alert("page has loaded");
       $('.add-plant-btn').click(function() {
         $('#plant_index').openModal();
       });
