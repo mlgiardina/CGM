@@ -5,6 +5,7 @@ var LoggedOutNavigation = React.createClass({
         <Home url='/'/>
         <SignUp url='/users/new'/>
         <LogIn url='/login'/>
+        <a className="logo" href="/">Community Garden Manager</a>
       </nav>
     );
   }

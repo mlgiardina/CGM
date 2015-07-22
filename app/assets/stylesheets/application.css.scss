@@ -14,6 +14,7 @@
     text-align: center;
     overflow: hidden;
     background-color: #B4B5A7;
+    color: #1D6F5B;
     position: relative;
     float: left;
     width: 200px;
@@ -43,12 +44,13 @@
 }
 
 footer {
+  position: fixed;
   bottom: 0;
-  height: 10%;
+  height: 7%;
   background: #B4B5A7;
   width: 100%;
   text-align: center;
-  padding-top: 7px;
+  padding-top: 15px;
   color: white;
 
   a{
@@ -66,8 +68,8 @@ nav {
 
 .login-form, .signup-form {
   border: 1px solid #18705B;
-  max-width: 70%;
-  margin: 70px auto auto auto;
+  max-width: 50%;
+  margin: 150px auto auto auto;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 2em;
@@ -138,4 +140,8 @@ nav {
 
 .plot-number {
   margin-top: 2px;
+}
+
+.update-image-btn {
+  margin-top: 20px;
 }
