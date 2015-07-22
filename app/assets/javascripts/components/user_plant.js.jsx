@@ -20,11 +20,12 @@ var UserPlant = React.createClass({
   handleClick: function () {
     var self = this;
     self.props.removePlant(self.props.plant);
-    $.post("/plot_plants/",
-          {
-            _method: "delete",
-            id: self.findPlotPlantID(self.props.plotPlants)
-          }
-    );
-  }
+    $.ajax({
+            url: "/plot_plants/",
+            type: "POST",
+            data: { _method: "delete",
+                    id: self.findPlotPlantID(self.props.plotPlants)
+                  }
+    });
+  };
 });
