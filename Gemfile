@@ -16,6 +16,7 @@ gem 'react-rails'
 gem 'bcrypt'
 gem 'puma'
 gem 'figaro'
+gem 'cloudinary'
 gem 'mandrill_dm'
 
 group :development, :test do

@@ -16,13 +16,23 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require cloudinary
+//= require_tree .
 
 
 $(document).ready(function() {
-      alert("page has loaded");
       $('.add-plant-btn').click(function() {
         $('#plant_index').openModal();
       });
-      // $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('select').material_select();
+      $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
+      $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
+        $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+          $('.preview').html(
+            $.cloudinary.image(data.result.public_id,
+              { format: data.result.format, version: data.result.version,
+                crop: 'fill', width: 200, height: 200 })
+          );
+        });
+});
 });

@@ -36,72 +36,7 @@
     'use strict';
 
     // Prepend to the default processQueue:
-    $.blueimp.fileupload.prototype.options.processQueue.unshift(
-        {
-            action: 'loadImageMetaData',
-            disableImageHead: '@',
-            disableExif: '@',
-            disableExifThumbnail: '@',
-            disableExifSub: '@',
-            disableExifGps: '@',
-            disabled: '@disableImageMetaDataLoad'
-        },
-        {
-            action: 'loadImage',
-            // Use the action as prefix for the "@" options:
-            prefix: true,
-            fileTypes: '@',
-            maxFileSize: '@',
-            noRevoke: '@',
-            disabled: '@disableImageLoad'
-        },
-        {
-            action: 'resizeImage',
-            // Use "image" as prefix for the "@" options:
-            prefix: 'image',
-            maxWidth: '@',
-            maxHeight: '@',
-            minWidth: '@',
-            minHeight: '@',
-            crop: '@',
-            orientation: '@',
-            forceResize: '@',
-            disabled: '@disableImageResize'
-        },
-        {
-            action: 'saveImage',
-            quality: '@imageQuality',
-            type: '@imageType',
-            disabled: '@disableImageResize'
-        },
-        {
-            action: 'saveImageMetaData',
-            disabled: '@disableImageMetaDataSave'
-        },
-        {
-            action: 'resizeImage',
-            // Use "preview" as prefix for the "@" options:
-            prefix: 'preview',
-            maxWidth: '@',
-            maxHeight: '@',
-            minWidth: '@',
-            minHeight: '@',
-            crop: '@',
-            orientation: '@',
-            thumbnail: '@',
-            canvas: '@',
-            disabled: '@disableImagePreview'
-        },
-        {
-            action: 'setImage',
-            name: '@imagePreviewName',
-            disabled: '@disableImagePreview'
-        },
-        {
-            action: 'deleteImageReferences',
-            disabled: '@disableImageReferencesDeletion'
-        }
-    );
+
 
     // The File Upload Resize plugin extends the fileupload widget
     // with image resize functionality:

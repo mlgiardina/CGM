@@ -14,12 +14,15 @@
     <div class="col s6">
       <%= form_for(@plot) do |f| %>
         <p>Upload a New Image:</p>
-        <%# cl_image_upload(:image,
+        <%= cl_image_upload(:image,
                             :crop => :fill,
                             :width => 200,
                             :height => 200) %>
       <button class="btn update-image-btn">Update Image</button>
       <% end %>
+      
+      <div class="preview">
+      </div>
     </div>
     <div class="col s6">
       <p class="current-plot-image">Current Image:
@@ -27,4 +30,6 @@
       </p>
     </div>
   </section>
+
+
 </div>
