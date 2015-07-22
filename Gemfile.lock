@@ -96,6 +96,8 @@ GEM
       json (>= 1.7.7, < 2.0)
     mandrill_dm (1.2.0)
       mandrill-api (~> 1.0.53)
+    materialize-sass (0.97.0)
+      sass (~> 3.3)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
@@ -208,6 +210,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mandrill_dm
+  materialize-sass
   pg
   pry
   puma
