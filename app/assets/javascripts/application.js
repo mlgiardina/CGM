@@ -20,7 +20,9 @@
 
 
 $(document).ready(function() {
-      $('.modal-trigger').leanModal();
+      $('.add-plant-btn').click(function() {
+        $('#plant_index').openModal();
+      });
       $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('select').material_select();
 });
