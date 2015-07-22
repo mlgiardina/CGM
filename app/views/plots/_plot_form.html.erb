@@ -13,7 +13,6 @@
   <section class="edit-plot-image row">
     <div class="col s6">
       <%= form_for(@plot) do |f| %>
-        <%= cloudinary_js_config %>
         <p>Upload a New Image:</p>
         <%= cl_image_upload(:image,
                             :crop => :fill,
