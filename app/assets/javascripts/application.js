@@ -16,7 +16,6 @@
 //= require react
 //= require react_ujs
 //= require components
-//= require_tree .
 
 
 $(document).ready(function() {
@@ -24,6 +23,6 @@ $(document).ready(function() {
       $('.add-plant-btn').click(function() {
         $('#plant_index').openModal();
       });
-      $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
+      // $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('select').material_select();
 });
