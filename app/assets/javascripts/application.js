@@ -20,7 +20,7 @@
 
 
 $(document).ready(function() {
-      $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('.modal-trigger').leanModal();
+      $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('select').material_select();
 });

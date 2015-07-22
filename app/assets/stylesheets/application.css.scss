@@ -35,8 +35,6 @@
 }
 
 .garden-container {
-  background-image: url(dirt.jpg);
-  background-size: cover;
 }
 
 .plants-in-plot {
@@ -72,6 +70,7 @@ nav {
   margin: 150px auto auto auto;
   box-sizing: border-box;
   padding: 10px;
+  opacity: .8;
   border-radius: 2em;
   background: #18705B;
 
@@ -95,7 +94,8 @@ nav {
 .container {
   padding-top: 20px;
   min-height: 650px;
-  padding-bottom: 7%
+  padding-bottom: 7%;
+
 }
 
 .btn {
@@ -114,6 +114,7 @@ nav {
   border: 1px solid black;
   margin: 5px;
   padding: 5px;
+  color: #878787;
 }
 
 .edit-plot-image {
@@ -144,4 +145,8 @@ nav {
 
 .update-image-btn {
   margin-top: 20px;
+}
+
+.plot-header {
+  font-weight: bold;
 }

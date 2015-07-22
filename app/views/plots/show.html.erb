@@ -1,13 +1,15 @@
-<h2>Plot Number <%= @plot.plot_number %> in <%= @plot.garden.name %></h2>
-<% if user_is_admin? || current_user = @plot.user %>
-  <%= link_to "Edit This Plot", "/plots/#{@plot.id}/edit" %>
-<% end %>
-<p>Gardener: <%= @plot.user.full_name %></p>
-<p>Plants in this plot:
-  <ul><% @plot.plants.each do |plant| %>
-    <li><%= plant.name %>
-      <p><%= plant.description %></p>
-    </li>
+<div class="plot-show">
+  <h2 class="plot-header">Plot Number <%= @plot.plot_number %> in <%= @plot.garden.name %></h2>
+  <% if user_is_admin? || current_user = @plot.user %>
+    <%= link_to "Edit This Plot", "/plots/#{@plot.id}/edit" %>
   <% end %>
-  </ul>
-</p>
+  <p>Gardener: <%= @plot.user.full_name %></p>
+  <p>Plants in this plot:
+    <ul><% @plot.plants.each do |plant| %>
+      <li><%= plant.name %>
+        <p><%= plant.description %></p>
+      </li>
+    <% end %>
+    </ul>
+  </p>
+</div>
