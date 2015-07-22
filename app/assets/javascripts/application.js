@@ -16,7 +16,6 @@
 //= require react
 //= require react_ujs
 //= require components
-//= require cloudinary
 //= require_tree .
 
 
