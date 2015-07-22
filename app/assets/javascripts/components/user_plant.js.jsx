@@ -27,5 +27,5 @@ var UserPlant = React.createClass({
                     id: self.findPlotPlantID(self.props.plotPlants)
                   }
     });
-  };
+  }
 });
