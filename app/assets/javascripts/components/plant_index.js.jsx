@@ -81,15 +81,17 @@ var AddPlant = React.createClass({
   handleClick: function () {
     var self = this;
     self.props.listenForAddedPlant(this.props.plant)
-    $.post("/plot_plants/",
-          {
-            plot_id: this.props.plot.id,
-            plant_id: this.props.plant.id
-          },
-          function (data, status) {
-            if (status === "success" ) {
-              self.setState({ added: true });
-            };
-          });
+    $.ajax({
+            url: "/plot_plants/",
+            type: "POST",
+            data: { plot_id: this.props.plot.id,
+                    plant_id: this.props.plant.id
+                  },
+            success: function (data, status) {
+              if (status === "success" ) {
+                self.setState({ added: true });
+              };
+            }
+        });
   }
 });
