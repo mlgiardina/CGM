@@ -3,9 +3,12 @@ var LoggedOutNavigation = React.createClass({
     return (
       <nav>
         <a className="logo" href="/">Community Garden Manager</a>
-        <Home url='/'/>
-        <SignUp url='/users/new'/>
-        <LogIn url='/login'/>
+        <div className="nav-btn">
+          <SignUp url='/users/new'/>
+        </div>
+        <div className='nav-btn'>
+          <LogIn url='/login'/>
+        </div>
       </nav>
     );
   }
@@ -14,7 +17,7 @@ var LoggedOutNavigation = React.createClass({
 var SignUp = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked} className='btn btn-default'>Sign Up</span>
+      <span onClick={this.clicked} className='nav-btn'>Sign Up</span>
     );
   },
   clicked: function () {
@@ -25,7 +28,7 @@ var SignUp = React.createClass({
 var LogIn = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked} className='btn btn-default'>Log In</span>
+      <span onClick={this.clicked} className='nav-btn'>Log In</span>
     );
   },
 

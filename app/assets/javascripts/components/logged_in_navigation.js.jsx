@@ -3,10 +3,18 @@ var LoggedInNavigation = React.createClass({
     return (
       <nav>
         <a className="logo" href="/">Community Garden Manager</a>
-        <Home url='/' />
-        <MyAccount url={'/users/' + this.props.user_id} />
-        <MyPlots url='/plots' />
-        <LogOut url='/logout' />
+        <div className='nav-btn'>
+          <LogOut url='/logout' />
+        </div>
+        <div className='nav-btn'>
+          <MyPlots url='/plots' />
+        </div>
+        <div className='nav-btn'>
+          <MyAccount url={'/users/' + this.props.user_id} />
+        </div>
+        <div className='nav-btn'>
+            <Home url='/' />
+        </div>
       </nav>
     );
   }
@@ -15,7 +23,7 @@ var LoggedInNavigation = React.createClass({
 var Home = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked} className='btn btn-default'>Home</span>
+      <span onClick={this.clicked} className='nav-btn'>Home</span>
     );
   },
 
@@ -27,7 +35,7 @@ var Home = React.createClass({
 var MyAccount = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked} className='btn btn-default'>My Account</span>
+      <span onClick={this.clicked} className='nav-btn'>My Account</span>
     );
   },
 
@@ -39,7 +47,7 @@ var MyAccount = React.createClass({
 var MyPlots = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked} className='btn btn-default'>My Plots</span>
+      <span onClick={this.clicked} className='nav-btn'>My Plots</span>
     );
   },
 
@@ -51,7 +59,7 @@ var MyPlots = React.createClass({
 var LogOut = React.createClass({
   render: function () {
     return (
-      <span onClick={this.clicked} className='btn btn-default'>Log Out</span>
+      <span onClick={this.clicked} className='nav-btn'>Log Out</span>
     );
   },
 
