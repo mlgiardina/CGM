@@ -4,6 +4,7 @@ $header-footer-background: #13604A;
 $header-footer-text: white;
 $header-color: #6C4C26;
 $body-text-color: #8C8E85;
+$main-background-color: #DEECA3;
 
 h2 {
   color: $header-color;
@@ -24,7 +25,7 @@ h2 {
     text-align: center;
     overflow: hidden;
     background-color: $header-footer-background;
-    color: $body-text-color;
+    color: $main-background-color;
     position: relative;
     float: left;
     width: 200px;
@@ -64,9 +65,9 @@ footer {
   color: $header-footer-text;
 
   a{
-    color: #DEECA3;
+    color: $main-background-color;
     &:hover {
-      color: darken(#DEECA3, 10%);
+      color: darken($main-background-color, 10%);
     }
   }
 }
@@ -126,6 +127,10 @@ nav {
 }
 
 .btn {
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 0 5px;
+  min-width: 125px;
   background: #18705B;
   color: white;
   &:hover {
@@ -137,7 +142,6 @@ nav {
   font-weight: normal;
   font-size: 14px;
   padding: 0 5px;
-  min-width: 125px;
 }
 
 .user-plant-list {
@@ -148,9 +152,10 @@ nav {
 }
 
 .edit-plot-image {
-  border: 1px solid black;
+  background: white;
   margin: 5px;
   padding: 5px;
+  color: $body-text-color;
 }
 
 .current-plot-image {
@@ -170,7 +175,7 @@ nav {
 }
 
 .update-image-btn {
-  margin-top: 20px;
+  margin: 0;
 }
 
 .plot-header {
@@ -182,7 +187,7 @@ body {
 }
 
 .picture-background {
-  background-image: url(AerialGardens2.JPG);
+  background-image: url(commgard.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -228,10 +233,20 @@ body {
   font-size: 16px;
 }
 
-.plants-in-plot {
+.plants-in-plot, .new-image {
   color: $header-color;
+  font-weight: bold;
 }
 
-.edit-plot-image {
-  background: white;
+td, th {
+  padding: 8px;
+}
+
+.preview {
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.cur-img {
+  display: block;
 }

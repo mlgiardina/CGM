@@ -10,22 +10,22 @@
     </section>
   </div>
   <section class="edit-plot-image row">
-    <div class="col s6">
+    <h4 class="col s12 new-image">Upload a New Plot Image:</h4>
+    <div class="col s12 m6">
       <%= form_for(@plot) do |f| %>
-        <p>Upload a New Image:</p>
         <%= cl_image_upload(:image,
                             :crop => :fill,
                             :width => 200,
                             :height => 200) %>
+        <div class="preview">
+          <p class="col s6">(A preview of the new image will appear here. Please wait to push the 'UPDATE IMAGE' button until the preview appears.)</p>
+        </div>
       <button class="btn update-image-btn">Update Image</button>
       <% end %>
-
-      <div class="preview">
-      </div>
     </div>
-    <div class="col s6">
+    <div class="col s12 m6 current-image">
       <p class="current-plot-image">Current Image:
-        <img src=<%=@plot.image %>>
+        <img class="cur-img" src=<%=@plot.image %>>
       </p>
     </div>
   </section>
