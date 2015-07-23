@@ -299,20 +299,23 @@ td, th {
 
 }
 
-
-.alert, .notice {
-  opacity: .8;
-  color: white;
-  margin: 5px auto;
-  border-radius: 1em;
-  text-align: center;
-  max-width: 60%;
+#alert, #notice {
+    margin: 10px auto;
+    border-radius: 1em;
+    max-width: 60%;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
 }
-.alert {
+
+#alert {
   background: #E6423E;
+  opacity: .9;
 }
 
-.notice {
+#notice {
   background: #5FBF60;
   opacity: .9;
 }

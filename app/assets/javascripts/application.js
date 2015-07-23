@@ -33,5 +33,17 @@ $(document).ready(function() {
                 crop: 'fill', width: 200, height: 200 })
           );
         });
+
 });
+    if (document.getElementById("alert")) {
+      alert = document.getElementById("alert");
+      alert.addEventListener('click', function() {
+        alert.style.display = 'none';
+      }, false);
+    } else if (document.getElementById("notice")) {
+      notice = document.getElementById("notice");
+      notice.addEventListener('click', function() {
+        notice.style.display = 'none';
+      }, false);
+    };
 });
