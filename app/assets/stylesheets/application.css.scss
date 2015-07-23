@@ -2,9 +2,12 @@
 
 $header-footer-background: #13604A;
 $header-footer-text: white;
+$header-color: #6C4C26;
+$body-text-color: #8C8E85;
 
 h2 {
-  color: #6C4C26;
+  color: $header-color;
+  font-weight: bold;
 }
 
 .hidden {
@@ -20,23 +23,28 @@ h2 {
     text-decoration: none;
     text-align: center;
     overflow: hidden;
-    background-color: #B4B5A7;
-    color: #1D6F5B;
+    background-color: $header-footer-background;
+    color: $body-text-color;
     position: relative;
     float: left;
     width: 200px;
     height: 200px;
     &:hover {
       img {
-      top: 150px;
+      top: 160px;
       transition: all 1.5s ease;
       }
+    }
+
+    .plot-number {
+      font-weight: bold;
+      color: white;
     }
 
     img {
       position: absolute;
       left: 0;
-      top: 20px;
+      top: 25px;
     }
   }
 }
@@ -89,7 +97,7 @@ nav {
   border: 1px solid #18705B;
   max-width: 40%;
   box-sizing: border-box;
-  margin: auto;
+  margin: 30px auto;
   padding: 10px;
   opacity: .9;
   border-radius: 2em;
@@ -126,14 +134,17 @@ nav {
 }
 
 .add-plant-btn {
-  float: right;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 0 5px;
+  min-width: 125px;
 }
 
 .user-plant-list {
-  border: 1px solid black;
   margin: 5px;
   padding: 5px;
   color: #878787;
+  background: white;
 }
 
 .edit-plot-image {
@@ -171,7 +182,7 @@ body {
 }
 
 .picture-background {
-  background-image: url(commgard.jpg);
+  background-image: url(AerialGardens2.JPG);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -181,4 +192,46 @@ body {
   &:hover {
     color: darken(#DEECA3, 10%);
   }
+}
+
+.gardener-name {
+  font-size: 24px;
+  color: $header-color;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.body-text {
+  color: $body-text-color;
+}
+
+.plant-name {
+  text-decoration: underline;
+}
+
+.plot-show-sub-header {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.show-page-content {
+  background: white;
+}
+
+.sub-sub-header {
+  font-size: 20px;
+}
+
+.info {
+  font-size: 16px;
+}
+
+.plants-in-plot {
+  color: $header-color;
+}
+
+.edit-plot-image {
+  background: white;
 }

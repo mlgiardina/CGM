@@ -3,7 +3,6 @@
     <h2>Plot Number <%= @plot.plot_number %></h2>
     <section class="user-plant-list col s12">
       <p><h4 class="plants-in-plot">Plants in this plot: </h4>
-        <button data-target="plant_index" class="add-plant-btn btn modal-trigger">Add a Plant</button>
         <%= react_component("UserPlantList", allPlants: @plants,
                             plot: @plot, plants: @user_plants,
                             plotPlants: PlotPlant.where(plot_id: @plot.id)) %>
@@ -20,7 +19,7 @@
                             :height => 200) %>
       <button class="btn update-image-btn">Update Image</button>
       <% end %>
-      
+
       <div class="preview">
       </div>
     </div>

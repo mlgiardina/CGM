@@ -1,15 +1,19 @@
 <div class="plot-show">
-  <h2 class="plot-header">Plot Number <%= @plot.plot_number %> in <%= @plot.garden.name %></h2>
-  <% if user_is_admin? || current_user = @plot.user %>
-    <%= link_to "Edit This Plot", "/plots/#{@plot.id}/edit" %>
-  <% end %>
-  <p>Gardener: <%= @plot.user.full_name %></p>
-  <p>Plants in this plot:
-    <ul><% @plot.plants.each do |plant| %>
-      <li><%= plant.name %>
-        <p><%= plant.description %></p>
-      </li>
-    <% end %>
-    </ul>
-  </p>
+<h2 class="plot-header col s12">Plot Number <%= @plot.plot_number %> in <%= @plot.garden.name %></h2>
+  <div class="row show-page-content">
+    <div class="plot-show-sub-header">
+      <p class="gardener-name col s6"><span>Gardener:</span> <%= @plot.user.full_name %></p>
+      <% if user_is_admin? || current_user == @plot.user %>
+        <p class="col s6 gardener-name"><%= link_to "Edit This Plot", "/plots/#{@plot.id}/edit" %></p>
+      <% end %>
+    </div>
+    <p class="sub-sub-header body-text col s12">What <%=@plot.user.first_name %>'s growing:
+      <p><% @plot.plants.each do |plant| %>
+        <ul class="row body-text info col s12"><span class="plant-name"><%= plant.name %></span>
+          <li class="body-text col s12 info"><%= plant.description %></li>
+        </ul>
+      <% end %>
+    </p>
+    </p>
+  </div>
 </div>
