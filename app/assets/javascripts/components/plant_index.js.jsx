@@ -10,9 +10,9 @@ var PlantIndex = React.createClass({
   },
   render: function () {
     return (
-      <div id="plant_index" className="modal">
+      <div id="plant_index" className="modal show-page-content">
         <div className="modal-content">
-          <h4>Plants</h4>
+          <h4 className="header">Plants</h4>
           <div className="plant-search">
             <input type='text' id='search-bar' placeholder="Search for plants..." onChange={this.filterList}/>
           </div>

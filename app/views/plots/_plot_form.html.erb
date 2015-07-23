@@ -1,7 +1,7 @@
 <div class="edit-plot-form">
   <div class="row">
     <h2>Plot Number <%= @plot.plot_number %></h2>
-    <section class="user-plant-list col s12">
+    <section class="user-plant-list col s12 show-page-content">
       <p><h4 class="plants-in-plot">Plants in this plot: </h4>
         <%= react_component("UserPlantList", allPlants: @plants,
                             plot: @plot, plants: @user_plants,
@@ -9,7 +9,7 @@
       </p>
     </section>
   </div>
-  <section class="edit-plot-image row body-text">
+  <section class="edit-plot-image row body-text show-page-content">
     <h4 class="col s12 new-image">Upload a New Plot Image:</h4>
     <div class="col s12 m6">
       <%= form_for(@plot) do |f| %>

@@ -232,6 +232,7 @@ body {
 
 .show-page-content {
   background: white;
+  border-radius: 1rem;
 
   span {
     font-weight: bold;
@@ -297,6 +298,12 @@ td, th {
     color: white;
   }
 
+}
+
+.header {
+  color: $header-color;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
 }
 
 #alert, #notice {
