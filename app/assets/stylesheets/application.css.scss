@@ -57,6 +57,7 @@ h2 {
 
 footer {
   font-family: 'Poiret One', cursive;
+  position: fixed;
   bottom: 0;
   min-height: 7%;
   background: $header-footer-background;
@@ -77,6 +78,7 @@ nav {
   font-family: 'Poiret One', cursive;
   background-color: $header-footer-background;
   padding-left: 5px;
+  min-height: 65px;
 
   .nav-buttons {
     float: right;
@@ -85,6 +87,7 @@ nav {
 }
 
 .nav-btn {
+  font-size: 16px;
   display: inline;
   box-sizing: border-box;
   cursor: pointer;
@@ -168,7 +171,7 @@ nav {
 .logo {
   font-family: 'Poiret One', cursive;
   font-size: 24px;
-  padding-left: 8px;
+  padding-left: 10px;
   color: white;
   font-weight: bold;
   display: inline;
@@ -281,4 +284,17 @@ td, th {
 
 .hamburger {
   padding: 10px;
+}
+
+.side-nav {
+  background: $header-footer-background;
+  
+  li:hover {
+      background: darken($header-footer-background, 3%);
+    }
+
+  a{
+    color: white;
+  }
+
 }

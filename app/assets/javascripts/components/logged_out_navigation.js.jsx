@@ -2,13 +2,20 @@ var LoggedOutNavigation = React.createClass({
   render: function () {
     return (
       <nav>
-        <a className="logo" href="/">Community Garden Manager</a>
-        <div className="nav-btn">
-          <SignUp url='/users/new'/>
+        <a className="logo brand-logo" href="/">Community Garden Manager</a>
+        <a href="#" data-activates="mobile-nav" className="button-collapse"><img className="hamburger" src='http://i.imgur.com/kLFoF6g.png'/></a>
+        <div className="hide-on-med-and-down">
+          <div className="nav-btn">
+            <SignUp url='/users/new'/>
+          </div>
+          <div className='nav-btn'>
+            <LogIn url='/login'/>
+          </div>
         </div>
-        <div className='nav-btn'>
-          <LogIn url='/login'/>
-        </div>
+        <ul className='side-nav' id='mobile-nav'>
+          <li><a href='/users/new'>Sign Up</a></li>
+          <li><a href='/login'>Log In</a></li>
+        </ul>
       </nav>
     );
   }

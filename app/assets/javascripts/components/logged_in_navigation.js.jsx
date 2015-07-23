@@ -2,8 +2,8 @@ var LoggedInNavigation = React.createClass({
   render: function () {
     return (
       <nav>
-        <a className="logo" href="/">Community Garden Manager</a>
-        <a href="#" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
+        <a className="logo brand-logo" href="/">Community Garden Manager</a>
+        <a href="#" data-activates="mobile-nav" className="button-collapse"><img className="hamburger" src='http://i.imgur.com/kLFoF6g.png'/></a>
         <div className="hide-on-med-and-down">
           <div className='nav-btn'>
             <LogOut url='/logout' />
@@ -19,10 +19,10 @@ var LoggedInNavigation = React.createClass({
           </div>
         </div>
         <ul className="side-nav" id="mobile-nav">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href={'/users/' + this.props.user_id}>My Account</a></li>
+          <li><a href="/plots">My Plots</a></li>
+          <li><a href="/logout">Logout</a></li>
         </ul>
       </nav>
     );
