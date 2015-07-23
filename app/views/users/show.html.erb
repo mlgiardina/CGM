@@ -1,5 +1,9 @@
 <h2><%= @user.full_name %>'s Account</h2>
-<p>First Name: <%= @user.first_name %></p>
-<p>Last Name: <%= @user.last_name %></p>
-<p>Email: <%= @user.email %></p>
-<%= link_to "Edit", "/users/#{@user.id}/edit" %>
+<div class="show-page-content body-text needs-padding">
+  <p><span>First Name:</span> <%= @user.first_name %></p>
+  <p><span>Last Name:</span> <%= @user.last_name %></p>
+  <p><span>Email:</span> <%= @user.email %></p>
+  <% if user_is_admin? || current_user == @user %>
+    <%= link_to "Edit", "/users/#{@user.id}/edit" %>
+  <% end %>
+</div>

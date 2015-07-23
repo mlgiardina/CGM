@@ -223,6 +223,10 @@ body {
 
 .show-page-content {
   background: white;
+
+  span {
+    font-weight: bold;
+  }
 }
 
 .sub-sub-header {
@@ -249,4 +253,12 @@ td, th {
 
 .cur-img {
   display: block;
+}
+
+.all-users {
+  padding: 10px;
+}
+
+.needs-padding {
+  padding: 10px;
 }
