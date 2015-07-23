@@ -57,13 +57,12 @@ h2 {
 
 footer {
   font-family: 'Poiret One', cursive;
-  position: fixed;
   bottom: 0;
-  height: 7%;
+  min-height: 7%;
   background: $header-footer-background;
   width: 100%;
   text-align: center;
-  padding-top: 15px;
+  padding: 15px;
   color: $header-footer-text;
 
   a{
@@ -274,4 +273,12 @@ td, th {
 
 .plot-owner {
   font-family: 'Open Sans', sans-serif;
+}
+
+.hide-on-med-and-down {
+  display: inline;
+}
+
+.hamburger {
+  padding: 10px;
 }

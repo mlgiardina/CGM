@@ -22,6 +22,7 @@
 
 $(document).ready(function() {
       $('.modal-trigger').leanModal();
+      $('.button-collapse').sideNav();
       $('select').material_select();
       $('.cloudinary-fileupload').cloudinary_fileupload({replaceFileInput: false});
       $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
