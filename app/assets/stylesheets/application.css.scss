@@ -98,6 +98,7 @@ nav {
 }
 
 .login-form, .signup-form {
+  font-family: 'Open Sans', sans-serif;
   border: 1px solid #18705B;
   max-width: 50%;
   box-sizing: border-box;
@@ -193,7 +194,7 @@ body {
 .picture-background {
   background-image: url(commgard.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fixed;
 }
 
 .forgot-password {
