@@ -8,12 +8,13 @@
       <% end %>
     </div>
     <p class="sub-sub-header body-text col s12">What <%=@plot.user.first_name %>'s growing:
-      <p><% @plot.plants.each do |plant| %>
-        <ul class="row body-text info col s12"><span class="plant-name"><%= plant.name %></span>
-          <li class="body-text col s12 info"><%= plant.description %></li>
-        </ul>
-      <% end %>
-    </p>
+      <p>
+        <% @plot.plants.each do |plant| %>
+          <ul class="row body-text info col s12"><span class="plant-name"><%= plant.name %></span>
+            <li class="body-text col s12 info"><%= plant.description %></li>
+          </ul>
+        <% end %>
+      </p>
     </p>
   </div>
 </div>

@@ -1,10 +1,14 @@
 <h2>My Plots</h2>
-<% @plots.each do |plot| %>
-  <div><%= link_to "Plot Number #{plot.plot_number}", plot %>
-    <p><% plot.plants.each do |plant| %>
-      <%= plant.name %>
-      <li><%= plant.description %></li>
-    </p>
-    <% end %>
-  </div>
-<% end %>
+<div class="show-page-content row">
+  <% @plots.each do |plot| %>
+    <h4 class="col s12 sub-sub-header body-text"><%= link_to "Plot Number #{plot.plot_number}", plot %> </h4>
+      <p>
+        <% plot.plants.each do |plant| %>
+          <ul class="row body-text info col s12"><span class="plant-name"><%= plant.name %></span>
+            <li class="body-text col s12 info"><%= plant.description %></li>
+          </ul>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+</div>
