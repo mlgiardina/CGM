@@ -19,7 +19,7 @@ Plant.create(name: "Snow Peas", description: "A must-have plant for a cool-seaso
 Plant.create(name: "Lacinato Kale", description: "Extra hardy, and tasty in a variety of dishes (try pan-frying them in extra virgin olive oil with lemon and red chile flakes).")
 Garden.create(name: "The Iron Garden")
 Garden.create(name: "Neighborhood Garden")
-User.create(first_name: "Test", last_name: "Tester", password: "password", admin: true, email: "test@example.com", garden_id: 1)
+User.create(first_name: "Joe", last_name: "Tester", password: "password", admin: true, email: "test@example.com", garden_id: 1)
 User.create(first_name: "Naomi", last_name: "Ruiz", password: "password", email: "nruiz@example.com", garden_id: 1)
 User.create(first_name: "Rosie", last_name: "Johnson", password: "password", email: "rosie@example.com", garden_id: 1)
 User.create(first_name: "Lamar", last_name: "Smith", password: "password", email: "l.smith@example.com", garden_id: 1)
