@@ -9,6 +9,7 @@ $main-background-color: #DEECA3;
 h2 {
   color: $header-color;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hidden {
@@ -38,7 +39,7 @@ h2 {
     }
 
     .plot-number {
-      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
       color: white;
     }
 
@@ -55,6 +56,7 @@ h2 {
 }
 
 footer {
+  font-family: 'Poiret One', cursive;
   position: fixed;
   bottom: 0;
   height: 7%;
@@ -73,6 +75,7 @@ footer {
 }
 
 nav {
+  font-family: 'Poiret One', cursive;
   background-color: $header-footer-background;
   padding-left: 5px;
 
@@ -163,8 +166,9 @@ nav {
 }
 
 .logo {
+  font-family: 'Poiret One', cursive;
   font-size: 24px;
-  padding-right: 8px;
+  padding-left: 8px;
   color: white;
   font-weight: bold;
   display: inline;
@@ -202,6 +206,7 @@ body {
 .gardener-name {
   font-size: 24px;
   color: $header-color;
+  font-family: 'Montserrat', sans-serif;
 
   span {
     font-weight: bold;
@@ -210,6 +215,7 @@ body {
 
 .body-text {
   color: $body-text-color;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .plant-name {
@@ -240,10 +246,12 @@ body {
 .plants-in-plot, .new-image, .my-plots-number {
   color: $header-color;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 td, th {
   padding: 8px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .preview {
@@ -261,4 +269,8 @@ td, th {
 
 .needs-padding {
   padding: 10px;
+}
+
+.plot-owner {
+  font-family: 'Open Sans', sans-serif;
 }

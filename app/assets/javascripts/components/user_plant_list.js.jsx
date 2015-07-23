@@ -24,7 +24,7 @@ var UserPlantList = React.createClass({
       <div>
         <table>
           <thead>
-            <tr>
+            <tr className="body-text">
               <th>Plant Name</th>
               <th>Description</th>
               <th><button data-target="plant_index" className="add-plant-btn btn modal-trigger">Add Plants</button></th>
